@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Schedule>
+
+<h2>Schedule</h2>
+<table class="table">
+    <tr>
+        <th>Opponent</th>
+        <th>Time</th>
+        <th>Home or Away</th>
+        
+    </tr>
+
+    @foreach (var schedule in @Model)
+    {
+        <tr>
+            <td>@schedule.Opponent</td>
+            <td>@schedule.Time</td>
+            <td>@schedule.HomeAway</td>
+
+
+
+        </tr>
+    }
+
+</table>
+
+
+
+

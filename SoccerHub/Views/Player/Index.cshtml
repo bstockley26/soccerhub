@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Player>
+
+<h2>Roster</h2>
+<div style="display: block">
+    <a href="/Player/InsertPlayer/">Create a New Player</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>Player ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Position</th>
+        <th>Jersey Number</th>
+    </tr>
+
+    @foreach (var player in @Model)
+    {
+        <tr>
+            <td><a href="/Player/ViewPlayer/@player.PlayerID">@player.PlayerID</a></td>
+            <td>@player.FirstName</td>
+            <td>@player.LastName</td>
+            <td>@player.Position</td>
+            <td>@player.JerseyNumber</td>
+        </tr>
+    }
+
+</table>
+
+
+
+

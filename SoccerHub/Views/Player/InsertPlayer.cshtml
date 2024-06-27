@@ -1,0 +1,44 @@
+﻿@model Player
+
+<h2>Create a New Player</h2>
+
+@using (Html.BeginForm("InsertPlayerToDatabase", "Player", "Post"))
+{
+
+
+    <label asp-for="PlayerID" class="control-label">Player ID</label>
+    <input type="number" name="PlayerID" class="form-control" value="" min="0" />
+
+    <label asp-for="FirstName" class="control-label">First Name</label>
+    <input type="text" name="FirstName" class="form-control" value="" />
+
+    <label asp-for="LastName" class="control-label">Last Name</label>
+    <input type="text" name="LastName" class="form-control" value="" />
+
+    <label asp-for="Active" class="control-label">Active</label>
+    <input type="text" name="Active" class="form-control" value="" />
+
+    <label asp-for="Citizenship" class="control-label">Citizenship</label>
+    <input type="text" name="Citizenship" class="form-control" value="" />
+
+    <label asp-for="Email" class="control-label">Email</label>
+    <input type="text" name="Email" class="form-control" value="" />
+
+    <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+    <input type="text" name="PhoneNumber" class="form-control" value="" />
+
+    <label asp-for="JerseyNumber" class="control-label">Jersey Number</label>
+    <input type="number" name="JerseyNumber" class="form-control" value="" />
+
+    <div class="form-group">
+        <label for="">Select a Position</label>
+        <select class="form-control" name="Position" value="">
+            @foreach (var pos in Model.Position)
+            {
+                <option value="@pos.PositionID">@pos.PositionName</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" value="Create Player" class="btn btn-primary" />
+}

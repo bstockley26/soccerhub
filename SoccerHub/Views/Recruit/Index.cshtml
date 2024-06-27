@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Recruit>
+
+<h2>Recruits</h2>
+<table class="table">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Position</th>
+        <th>Citizenship</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Club Team</th>
+        <th>Recruit ID</th>
+    </tr>
+
+    @foreach (var recruits in @Model)
+    {
+        <tr>
+            <td>@recruits.FirstName</td>
+            <td>@recruits.LastName</td>
+            <td>@recruits.Position</td>
+            <td>@recruits.Citizenship</td>
+            <td>@recruits.PhoneNumber</td>
+            <td>@recruits.Email</td>
+            <td>@recruits.ClubTeam</td>
+            <td>@recruits.RecruitID</td>
+            
+        </tr>
+    }
+
+</table>
