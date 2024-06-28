@@ -18,7 +18,7 @@ builder.Services.AddTransient<IPlayerRepository, PlayerRepository>();
 
 builder.Services.AddTransient<IRecruitRepository, RecruitRepository>();
 
-builder.Services.AddTransient<IScheduleRepository, ScheduleRepository>();
+builder.Services.AddTransient<IEventRepository, EventRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

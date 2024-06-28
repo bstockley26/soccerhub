@@ -1,30 +1,27 @@
 ﻿@model IEnumerable<Recruit>
 
 <h2>Recruits</h2>
+<div style="display: block">
+    <a href="/Recruit/InsertRecruit/">Create a New Recruit</a>
+</div>
 <table class="table">
     <tr>
+        <th>Recruit ID</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Position</th>
-        <th>Citizenship</th>
-        <th>Phone Number</th>
-        <th>Email</th>
-        <th>Club Team</th>
-        <th>Recruit ID</th>
+       
     </tr>
 
-    @foreach (var recruits in @Model)
+    @foreach (var recruit in @Model)
     {
         <tr>
-            <td>@recruits.FirstName</td>
-            <td>@recruits.LastName</td>
-            <td>@recruits.Position</td>
-            <td>@recruits.Citizenship</td>
-            <td>@recruits.PhoneNumber</td>
-            <td>@recruits.Email</td>
-            <td>@recruits.ClubTeam</td>
-            <td>@recruits.RecruitID</td>
+            <td><a href="/Recruit/ViewRecruit/@recruit.RecruitID">@recruit.RecruitID</a></td>
+            <td>@recruit.FirstName</td>
+            <td>@recruit.LastName</td>
+            <td>@recruit.PositionName</td>
             
+
         </tr>
     }
 

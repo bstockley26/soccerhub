@@ -1,10 +1,10 @@
 ﻿using System;
 namespace SoccerHub.Models
 {
-	public class Schedule
+	public class Event
 	{
 		public string Opponent { get; set; }
-		public string Time { get; set; }
+		public string DateTime { get; set; }
 		public string HomeAway{ get; set; }
 		
 	}

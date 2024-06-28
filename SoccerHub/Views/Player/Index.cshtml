@@ -17,10 +17,11 @@
     @foreach (var player in @Model)
     {
         <tr>
+
             <td><a href="/Player/ViewPlayer/@player.PlayerID">@player.PlayerID</a></td>
             <td>@player.FirstName</td>
             <td>@player.LastName</td>
-            <td>@player.Position</td>
+            <td>@player.PositionName</td>
             <td>@player.JerseyNumber</td>
         </tr>
     }

@@ -11,8 +11,9 @@ namespace SoccerHub.Models
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public int JerseyNumber { get; set; }
-        public IEnumerable<Position> Position { get; set; } 
-
+        public IEnumerable<Position> Positions { get; set; }
+        public int Position { get; set; }
+        public string PositionName { get; set;}
 
 
     }

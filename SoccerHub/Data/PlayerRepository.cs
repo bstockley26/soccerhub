@@ -21,11 +21,12 @@ namespace SoccerHub.Data
 
         public IEnumerable<Player> GetPlayers()
         {
-            return _connection.Query<Player>("SELECT * FROM player;");
+            return _connection.Query<Player>("SELECT p.PlayerID, p.FirstName, p.LastName, p.Position, p.JerseyNumber, pos.PositionName FROM player p JOIN position pos ON p.Position = pos.PositionID;");
         }
+
         public Player GetPlayer(int playerid)
         {
-            return _connection.QuerySingle<Player>("SELECT * FROM player WHERE PLAYERID = @playerid", new {playerid = playerid });
+            return _connection.QuerySingle<Player>("SELECT p.PlayerID, p.FirstName, p.LastName, p.Position, p.JerseyNumber,p.Active,p.Citizenship,p.Email,p.PhoneNumber, pos.PositionName FROM player p JOIN position pos ON p.Position = pos.PositionID WHERE p.PlayerID = @playerid;", new { playerid = playerid });
         }
 
         public void InsertPlayer(Player playerToInsert)
@@ -45,7 +46,7 @@ namespace SoccerHub.Data
         {
             var positionList = GetPositions();
             var player = new Player();
-            player.Position = positionList;
+            player.Positions = positionList;
             return player;
         }
 

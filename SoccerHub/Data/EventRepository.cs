@@ -5,18 +5,18 @@ using SoccerHub.Models;
 
 namespace SoccerHub.Data
 {
-	public class ScheduleRepository : IScheduleRepository
+	public class EventRepository : IEventRepository
 	{
         private readonly IDbConnection _connection;
 
-        public ScheduleRepository(IDbConnection connection)
+        public EventRepository(IDbConnection connection)
         {
             _connection = connection;
         }
 
-        public IEnumerable<Schedule> GetAllGames()
+        public IEnumerable<Event> GetAllEvents()
         {
-            return _connection.Query<Schedule>("SELECT * FROM schedule;");
+            return _connection.Query<Event>("SELECT * FROM event;");
         }
     }
 }

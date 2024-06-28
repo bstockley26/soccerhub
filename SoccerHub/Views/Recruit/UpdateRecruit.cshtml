@@ -1,11 +1,11 @@
-﻿@model Player
+﻿@model Recruit
 
 <h2>Update @Model.FirstName @Model.LastName</h2>
 
-@using (Html.BeginForm("UpdatePlayerToDatabase", "Player", "Post"))
+@using (Html.BeginForm("UpdateRecruitToDatabase", "Recruit", "Post"))
 {
-    <input asp-for="PlayerID" type="hidden" value="@Model.PlayerID" />
-    
+    <input asp-for="RecruitID" type="hidden" value="@Model.RecruitID" />
+
     <label asp-for="FirstName" class="control-label">First Name</label>
     <input type="text" name="First Name" class="form-control" value="@Model.FirstName" />
 
@@ -15,21 +15,18 @@
     <label asp-for="Position" class="control-label">Position</label>
     <input type="text" name="Position" class="form-control" value="@Model.Position" />
 
-    <label asp-for="Active" class="control-label">Active</label>
-    <input type="text" name="Active" class="form-control" value="@Model.Active" />
-
     <label asp-for="Citizenship" class="control-label">Citizenship</label>
     <input type="text" name="Citizenship" class="form-control" value="@Model.Citizenship" />
+
+    <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+    <input type="text" name="Phone Number class=" form-control" value="@Model.PhoneNumber" />
 
     <label asp-for="Email" class="control-label">Email</label>
     <input type="text" name="Email" class="form-control" value="@Model.Email" />
 
-    <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
-    <input type="text" name="Phone Number class="form-control" value="@Model.PhoneNumber" />
+    <label asp-for="ClubTeam" class="control-label">Club Team</label>
+    <input type="text" name="ClubTeam" class="form-control" value="@Model.ClubTeam" />
 
-    <label asp-for="JerseyNumber" class="control-label">Jersey Number</label>
-    <input type="text" name="Jersey Number" class="form-control" value="@Model.JerseyNumber" />
-
-    <input type="submit" value="Update Player" class="btn btn-primary" />
+    <input type="submit" value="Update Recruit" class="btn btn-primary" />
 }
 

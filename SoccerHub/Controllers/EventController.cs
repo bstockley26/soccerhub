@@ -9,11 +9,11 @@ using SoccerHub.Data;
 
 namespace SoccerHub.Controllers
 {
-    public class ScheduleController : Controller
+    public class EventController : Controller
     {
-        private readonly IScheduleRepository _repo;
+        private readonly IEventRepository _repo;
 
-        public ScheduleController(IScheduleRepository repo)
+        public EventController(IEventRepository repo)
         {
             _repo = repo;
         }
@@ -21,8 +21,8 @@ namespace SoccerHub.Controllers
 
         public IActionResult Index()
         {
-            var schedule = _repo.GetAllGames();
-            return View(schedule);
+            var events = _repo.GetAllEvents();
+            return View(events);
         }
     }
 }

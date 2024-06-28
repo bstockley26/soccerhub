@@ -41,9 +41,9 @@ namespace SoccerHub.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult UpdatePlayer(int playerid)
+        public IActionResult UpdatePlayer(int id)
         {
-            Player player = _repo.GetPlayer(playerid);
+            Player player = _repo.GetPlayer(id);
             if (player == null)
             {
                 return View("PlayerNotFound");
